@@ -1244,7 +1244,7 @@
         /* ===== CTA SECTION ===== */
         .cta-section {
             padding: 6rem 0;
-            background: var(--gradient-red);
+            background: linear-gradient(135deg, #002868 0%, #0A1628 100%);
             position: relative;
             overflow: hidden;
         }
@@ -1254,8 +1254,32 @@
             position: absolute;
             inset: 0;
             background: 
-                radial-gradient(ellipse at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%),
-                radial-gradient(ellipse at 80% 50%, rgba(0,0,0,0.1) 0%, transparent 50%);
+                repeating-linear-gradient(
+                    0deg,
+                    transparent,
+                    transparent 40px,
+                    rgba(191, 10, 48, 0.15) 40px,
+                    rgba(191, 10, 48, 0.15) 80px
+                ),
+                repeating-linear-gradient(
+                    0deg,
+                    rgba(255, 255, 255, 0.08),
+                    rgba(255, 255, 255, 0.08) 40px,
+                    transparent 40px,
+                    transparent 80px
+                );
+        }
+
+        .cta-section::after {
+            content: '★ ★ ★ ★ ★';
+            position: absolute;
+            top: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1.5rem;
+            letter-spacing: 1.5rem;
+            color: rgba(255, 255, 255, 0.2);
+            white-space: nowrap;
         }
 
         .cta-content {
@@ -1290,13 +1314,15 @@
 
         .btn-white {
             background: var(--white);
-            color: var(--red);
+            color: #002868;
             box-shadow: var(--shadow-md);
         }
 
         .btn-white:hover {
             transform: translateY(-3px);
             box-shadow: var(--shadow-xl);
+            background: #BF0A30;
+            color: var(--white);
         }
 
         .btn-ghost {
@@ -1326,7 +1352,7 @@
         }
 
         .footer-brand .logo {
-            height: 40px;
+            height: 55px;
             margin-bottom: 1.5rem;
             filter: brightness(0) invert(1);
         }
